@@ -26,6 +26,6 @@ Route::get('/about', function () {
 });
 
 Route::get('/news', function () {
-    return "<h1>News</h1>";
+    return "<h1>Our news</h1>";
 });
 
