@@ -1,3 +1,5 @@
+@extends('layouts.main')
+@section('content')
 <h2>{{$news["id"]}}</h2>
 
 <div>
@@ -6,3 +8,4 @@
     <p><a href="{{route("category.show",$news["category"])}}">{{$news["category"]}}</a></p>
     <p>{{$news["description"]}}></p>
 </div>
+@endsection
