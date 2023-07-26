@@ -1,11 +1,6 @@
 @extends('layouts.main')
 @section('content')
-    <div class="row justify-content-between">
-        <div class="col-4"><h2>News List</h2></div>
-        <div class="col-sm-3">
-            <a href="{{route("news.request")}}" class="btn btn-primary">Выгрузить с источника</a>
-        </div>
-    </div>
+    <h2>News List</h2>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         @forelse($newsList as $news)
         <div class="col">
