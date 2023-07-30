@@ -33,6 +33,7 @@ Route::group(["prefix" => "admin", "as" => "admin."], static function () {
     Route::resource("/news", AdminNewsController::class);
 });
 
+Route::get('/', [NewsController::class, "index"]);
 Route::get('/news', [NewsController::class, "index"])->name("news.index");
 Route::get('/news/{id}', [NewsController::class, "show"])
     ->where("id", "\d+")

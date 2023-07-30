@@ -5,16 +5,16 @@
         @forelse($newsList as $news)
         <div class="col">
             <div class="card shadow-sm">
-                <h4><a href="{{ route("news.show",$news["id"]) }}">{{$news["title"]}}</a></h4>
-                <img src="{{$news["image"]}}" />
+                <h4><a href="{{ route("news.show",$news->id ) }}">{{$news->title}}</a></h4>
+                <img src="{{$news->image}}" />
                 <div class="card-body">
-                    <p class="card-text">{!! $news['description'] !!}</p>
-                    <p><a href="{{route("category.show",$news["category"])}}">{{$news["category"]}}</a></p>
+                    <p class="card-text">{!! $news->description !!}</p>
+                    <p><a href="{{route("category.show",$news->categoryTitle)}}">{{$news->categoryTitle}}</a></p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <a href="{{ route("news.show",$news["id"]) }}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
+                            <a href="{{ route("news.show",$news->id) }}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
                         </div>
-                        <small class="text-body-secondary">{{$news["author"]}}&nbsp ({{$news["created_at"]}})</small>
+                        <small class="text-body-secondary">{{$news->author}}&nbsp ({{$news->created_at}})</small>
                     </div>
                 </div>
             </div>
