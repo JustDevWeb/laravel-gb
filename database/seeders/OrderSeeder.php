@@ -6,28 +6,32 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class CategorySeeder extends Seeder
+class OrderSeeder extends Seeder
 {
+    protected string $table = "news_order";
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        DB::table('categories')->insert($this->getData());
+        DB::table($this->table)->insert($this->getData());
     }
 
     public function getData(): array {
 
         $quantity = 10;
-        $categories = [];
+        $orders = [];
 
         for($i = 0; $i < $quantity; $i++) {
-            $categories[] = [
-                "title" => fake()->jobTitle(),
+            $orders[] = [
+                "name" => fake()->name(),
+                "phone" => fake()->phoneNumber(),
+                "image" => fake()->email(),
                 "description" => fake()->text(100),
-                "created_at" => now(),
+                "created_at" => now()
             ];
         }
-        return $categories;
+
+        return $orders;
     }
 }
